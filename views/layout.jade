@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='/css/bootstrap.css')
+  body
+    block nav
+      nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+        a.navbar-brand(href='/') Login Form Using Jade
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarsExampleDefault.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li.nav-item(class=(title=='Members' ? 'active': ''))
+              a.nav-link(href='/')
+                | Members
+            li.nav-item(class=(title=='Login' ? 'active': ''))
+              a.nav-link(href='/users/login') Login
+            li.nav-item(class=(title=='Register' ? 'active': ''))
+              a.nav-link(href='/users/register') Register
+          ul.nav.navbar-nav.ml-auto
+            li.nav-item(class=(title=='Logout' ? 'active': ''))
+              a.nav-link(href='/users/logout') Log out
+
+
+
+    block content
+
+    script(src='/js/jquery-3.4.1.min.js')
+    script(src='/js/bootstrap.js')
